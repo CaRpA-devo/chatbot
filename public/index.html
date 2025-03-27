@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Paddy´s Bot</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/JunusErgin/fast-ui@5bf7678f0b274c3063cd86702e4d52002757ea86/style.css"
+        />
+    </head>
+    <body>
+        <header>Paddy´s Gehirn</header>
+        <div class="container mt-16" id="msgContainer">
+            <div class="msg">Hier findest du was du vergessen hast.</div>
+        </div>
+        <form
+            class="container container-bottom"
+            onsubmit="postChatMessage(); return false;"
+        >
+            <input type="text" placeholder="Hau raus..." id="chatField" />
+            <button>Tadaaa</button>
+        </form>
+        <script src="../src/js/index.js"></script>
+    </body>
+</html>
