@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url("./images/hero-section.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff; /* Weiße Textfarbe für bessere Lesbarkeit */
+    font-family: "Arial", sans-serif;
+    display: flex;
+}
+
+/* Hauptcontainer */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    max-width: calc(100% - 300px);
+}
+
+/* Legende Container */
+.legend {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-left: 2px solid rgba(0, 255, 255, 0.3);
+    overflow-y: auto;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.legend h2 {
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.legend-category {
+    margin-bottom: 20px;
+}
+
+.legend-category h3 {
+    color: #0ff;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.legend-items {
+    list-style: none;
+    padding: 0;
+}
+
+.legend-items li {
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    border-left: 2px solid #0ff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.legend-items li:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Container für den Chat-Bereich */
+#msgContainer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: #0ff solid 2px;
+    margin: 20px;
+    margin-top: 50px;
+    margin-bottom: 80px; /* Platz für das fixierte Eingabefeld */
+    backdrop-filter: blur(5px); /* Leichter Blur-Effekt */
+}
+
+/* Form-Container fixiert unten links */
+.container-bottom {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    background-color: transparent;
+}
+
+/* Eingabefeld-Styling */
+#chatField {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    margin-left: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Button-Styling */
+button {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #0ff;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 20rem;
+    position: fixed;
+    width: max-content;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+button:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+/* Tabellen-Styling */
+.method-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+}
+
+.method-table th,
+.method-table td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    text-align: left;
+}
+
+.method-table th {
+    background-color: rgba(0, 0, 255, 0.3);
+}
+
+/* Code-Block-Styling */
+code {
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: "Consolas", monospace;
+    color: rgb(0, 225, 255); /* Neon-Grün für Code */
+}
+
+pre {
+    background-color: #171717;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

@@ -3,24 +3,84 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Paddy´s Bot</title>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/JunusErgin/fast-ui@5bf7678f0b274c3063cd86702e4d52002757ea86/style.css"
-        />
+        <title>Second Brain</title>
+        <link rel="stylesheet" href="../src/assets/styles.css" />
+        <link rel="stylesheet" href="./index.css" />
     </head>
     <body>
-        <header>Paddy´s Gehirn</header>
-        <div class="container mt-16" id="msgContainer">
-            <div class="msg">Hier findest du was du vergessen hast.</div>
+        <div class="main-content">
+            <header>
+                <h1>Second Brain</h1>
+            </header>
+            <div id="msgContainer">
+                <div class="msg">Willkommen in deinem zweiten Gehirn! 🧠</div>
+            </div>
+            <form
+                class="container-bottom"
+                onsubmit="postChatMessage(); return false;"
+            >
+                <input
+                    type="text"
+                    placeholder="Stelle deine Frage..."
+                    id="chatField"
+                />
+                <button type="submit">Fragen</button>
+            </form>
         </div>
-        <form
-            class="container container-bottom"
-            onsubmit="postChatMessage(); return false;"
-        >
-            <input type="text" placeholder="Hau raus..." id="chatField" />
-            <button>Tadaaa</button>
-        </form>
-        <script src="../src/js/index.js"></script>
+
+        <div class="legend">
+            <h2>Verfügbare Befehle</h2>
+
+            <div class="legend-category">
+                <h3>Arrays</h3>
+                <ul class="legend-items">
+                    <li>sort</li>
+                    <li>reverse</li>
+                    <li>join</li>
+                    <li>split</li>
+                </ul>
+            </div>
+
+            <div class="legend-category">
+                <h3>Schleifen</h3>
+                <ul class="legend-items">
+                    <li>for</li>
+                    <li>while</li>
+                    <li>do while</li>
+                    <li>for of</li>
+                    <li>for in</li>
+                    <li>forEach</li>
+                </ul>
+            </div>
+
+            <div class="legend-category">
+                <h3>Objekte</h3>
+                <ul class="legend-items">
+                    <li>keys</li>
+                    <li>values</li>
+                    <li>entries</li>
+                </ul>
+            </div>
+
+            <div class="legend-category">
+                <h3>Ordner</h3>
+                <ul class="legend-items">
+                    <li>folders</li>
+                    <li>ordner erstellen</li>
+                    <li>ordner löschen</li>
+                </ul>
+            </div>
+
+            <div class="legend-category">
+                <h3>Dokumentation</h3>
+                <ul class="legend-items">
+                    <li>readme</li>
+                    <li>changelog</li>
+                    <li>contributing</li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="module" src="/src/js/index.js"></script>
     </body>
 </html>
