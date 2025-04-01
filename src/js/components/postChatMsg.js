@@ -17,14 +17,32 @@ const antworten = {
     default: "Achte auf deine Eingabe und schaue in die Legende für die KEYS.",
 };
 
+// Schreibmaschinen-Animation
+function typeWriter(element, text, speed = 50) {
+    let i = 0;
+    element.textContent = "";
+
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+
+    type();
+}
+
 export function postChatMessage(msgContainer, chatField) {
     const userInput = chatField.value.toLowerCase();
     chatField.value = "";
 
     const userMsg = document.createElement("div");
     userMsg.className = "msg-me";
-    userMsg.textContent = userInput;
     msgContainer.appendChild(userMsg);
+
+    // Starte die Schreibmaschinen-Animation für die Benutzerfrage
+    typeWriter(userMsg, userInput);
 
     setTimeout(() => {
         const botMsg = document.createElement("div");
@@ -45,7 +63,11 @@ export function postChatMessage(msgContainer, chatField) {
             }
         );
 
+        // Füge die Antwort hinzu und starte die Animation
         botMsg.innerHTML = response.replace(/\n/g, "<br>");
         msgContainer.appendChild(botMsg);
-    }, 1000);
+
+        // Scroll zum Ende
+        msgContainer.scrollTop = msgContainer.scrollHeight;
+    }, userInput.length * 50 + 500); // Warte bis die Frage vollständig geschrieben ist
 }
