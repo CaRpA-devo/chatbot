@@ -1,122 +1,113 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Second Brain</title>
-        <link rel="stylesheet" href="/src/assets/styles.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Brain</title>
+    <link rel="stylesheet" href="/src/assets/styles.css" />
 
-        <script type="module" src="/src/js/index.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <a href="./index.html"
-                ><img
-                    class="carpa-logo"
-                    src="../src/assets/images/carpa-logo.webp"
-                    alt="Bild von carpa-logo"
-                    width="40"
-                    height="40"
-            /></a>
-            <h1>Second Brain</h1>
+    <script type="module" src="/src/js/index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html"
+        ><img
+          class="carpa-logo"
+          src="/src/assets/images/carpa-logo.webp"
+          alt="Bild von carpa-logo"
+          width="40"
+          height="40"
+      /></a>
+      <h1>Second Brain</h1>
 
-            <button class="legend-toggle" onclick="toggleLegend()">
-                <span class="toggle-icon">☰</span>
-            </button>
-        </header>
-        <div id="msgContainer" class="main-content container">
-            <div class="msg">Willkommen in deinem zweiten Gehirn! 🧠</div>
-        </div>
-        <form
-            class="container-bottom"
-            onsubmit="postChatMessage(); return false;"
-        >
-            <input
-                type="text"
-                placeholder="Stelle deine Frage..."
-                id="chatField"
-            />
-            <button type="submit">Fragen</button>
-        </form>
+      <button class="legend-toggle" onclick="toggleLegend()">
+        <span class="toggle-icon">☰</span>
+      </button>
+    </header>
+    <div id="msgContainer" class="main-content container">
+      <div class="msg">Willkommen in deinem zweiten Gehirn! 🧠</div>
+    </div>
+    <form class="container-bottom" onsubmit="postChatMessage(); return false;">
+      <input type="text" placeholder="Stelle deine Frage..." id="chatField" />
+      <button type="submit">Fragen</button>
+    </form>
 
-        <div class="legend">
-            <h2>Verfügbare Befehle</h2>
+    <div class="legend">
+      <h2>Verfügbare Befehle</h2>
 
-            <div class="legend-category">
-                <h3>Arrays</h3>
-                <ul class="legend-items">
-                    <li>sort</li>
-                    <li>reverse</li>
-                    <li>join</li>
-                    <li>split</li>
-                </ul>
-            </div>
+      <div class="legend-category">
+        <h3>Arrays</h3>
+        <ul class="legend-items">
+          <li>sort</li>
+          <li>reverse</li>
+          <li>join</li>
+          <li>split</li>
+        </ul>
+      </div>
 
-            <div class="legend-category">
-                <h3>Schleifen</h3>
-                <ul class="legend-items">
-                    <li>for</li>
-                    <li>while</li>
-                    <li>do while</li>
-                    <li>for of</li>
-                    <li>for in</li>
-                    <li>forEach</li>
-                </ul>
-            </div>
+      <div class="legend-category">
+        <h3>Schleifen</h3>
+        <ul class="legend-items">
+          <li>for</li>
+          <li>while</li>
+          <li>do while</li>
+          <li>for of</li>
+          <li>for in</li>
+          <li>forEach</li>
+        </ul>
+      </div>
 
-            <div class="legend-category">
-                <h3>Objekte</h3>
-                <ul class="legend-items">
-                    <li>keys</li>
-                    <li>values</li>
-                    <li>entries</li>
-                </ul>
-            </div>
+      <div class="legend-category">
+        <h3>Objekte</h3>
+        <ul class="legend-items">
+          <li>keys</li>
+          <li>values</li>
+          <li>entries</li>
+        </ul>
+      </div>
 
-            <div class="legend-category">
-                <h3>Ordner</h3>
-                <ul class="legend-items">
-                    <li>folders</li>
-                    <li>ordner erstellen</li>
-                    <li>ordner löschen</li>
-                </ul>
-            </div>
+      <div class="legend-category">
+        <h3>Ordner</h3>
+        <ul class="legend-items">
+          <li>folders</li>
+          <li>ordner erstellen</li>
+          <li>ordner löschen</li>
+        </ul>
+      </div>
 
-            <div class="legend-category">
-                <h3>Dokumentation</h3>
-                <ul class="legend-items">
-                    <li>readme</li>
-                    <li>changelog</li>
-                    <li>contributing</li>
-                </ul>
-            </div>
-        </div>
+      <div class="legend-category">
+        <h3>Dokumentation</h3>
+        <ul class="legend-items">
+          <li>readme</li>
+          <li>changelog</li>
+          <li>contributing</li>
+        </ul>
+      </div>
+    </div>
 
-        <script>
-            function toggleLegend() {
-                const legend = document.querySelector(".legend");
-                const mainContent = document.querySelector(".main-content");
-                const toggleBtn = document.querySelector(".legend-toggle");
+    <script>
+      function toggleLegend() {
+        const legend = document.querySelector(".legend");
+        const mainContent = document.querySelector(".main-content");
+        const toggleBtn = document.querySelector(".legend-toggle");
 
-                legend.classList.toggle("open");
-                mainContent.classList.toggle("legend-open");
-                toggleBtn.classList.toggle("active");
+        legend.classList.toggle("open");
+        mainContent.classList.toggle("legend-open");
+        toggleBtn.classList.toggle("active");
 
-                // Ändere das Icon je nach Zustand
-                const toggleIcon = toggleBtn.querySelector(".toggle-icon");
-                toggleIcon.textContent = legend.classList.contains("open")
-                    ? "✕"
-                    : "☰";
-            }
+        // Ändere das Icon je nach Zustand
+        const toggleIcon = toggleBtn.querySelector(".toggle-icon");
+        toggleIcon.textContent = legend.classList.contains("open") ? "✕" : "☰";
+      }
 
-            // Klick-Handler für die Legend-Items
-            document.querySelectorAll(".legend-items li").forEach((item) => {
-                item.addEventListener("click", () => {
-                    const chatField = document.getElementById("chatField");
-                    chatField.value = item.textContent;
-                    chatField.focus();
-                });
-            });
-        </script>
-    </body>
+      // Klick-Handler für die Legend-Items
+      document.querySelectorAll(".legend-items li").forEach((item) => {
+        item.addEventListener("click", () => {
+          const chatField = document.getElementById("chatField");
+          chatField.value = item.textContent;
+          chatField.focus();
+        });
+      });
+    </script>
+  </body>
 </html>

@@ -1,24 +1,25 @@
 {
-    "name": "chatbot",
-    "version": "1.0.0",
-    "description": "Ein JavaScript-basierter Chatbot",
-    "main": "src/index.js",
-    "scripts": {
-        "start": "node src/index.js",
-        "test": "jest",
-        "dev": "nodemon src/index.js"
-    },
-    "keywords": [
-        "chatbot",
-        "javascript"
-    ],
-    "author": "",
-    "license": "MIT",
-    "dependencies": {
-        "express": "^4.18.2"
-    },
-    "devDependencies": {
-        "jest": "^29.7.0",
-        "nodemon": "^3.0.2"
-    }
+  "name": "chatbot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Ein JavaScript-basierter Chatbot",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "chatbot",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  }
 }
